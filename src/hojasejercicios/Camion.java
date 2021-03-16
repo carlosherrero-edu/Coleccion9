@@ -33,7 +33,7 @@ public class Camion extends Vehiculo {
 	@Override
 	public void setNumRuedas(int numRuedas) {
 		if (numRuedas<=5){
-			throw new IllegalArgumentException ("El número de ruedas de un camión debe ser mayor de 5");
+			throw new IllegalArgumentException ("El número de ruedas no puede ser menor de 5");
 		}	
 		setNumRuedas(numRuedas);
 	}
