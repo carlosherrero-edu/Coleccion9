@@ -8,7 +8,7 @@ public class Camion extends Vehiculo {
 	
 	
 	public Camion (int ruedas, int cilindrada, double pot, int ejes){
-		
+		// este cambio lo agrego para provocar un conflicto
 		super(ruedas, cilindrada, pot);
 		this.setNumEjes(ejes);	
 	}
