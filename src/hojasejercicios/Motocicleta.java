@@ -1,9 +1,34 @@
 package hojasejercicios;
 
-public class Motocicleta extends Vehiculo {
-	
-	private int numeroPlazas;
+import java.awt.Color;
 
+public class Motocicleta extends Vehiculo {
+	//constante con el número de rueds
+	static final int RUEDAS=2;
+	
+	//propiedad de Motocicleta
+	private int numeroPlazas;
+	
+
+	//constructires
+	
+	 public Motocicleta (int cilindrada, int potencia, int plazas) {
+		 super(RUEDAS,cilindrada, potencia);
+		
+		 setNumeroPlazas(plazas);
+		
+		 
+	 }
+	 
+	 public Motocicleta (int cilindrada, int potencia, Color color, int plazas) {
+		 super(RUEDAS,cilindrada, potencia, color);
+		 
+			 setNumeroPlazas(plazas);
+		 
+	 }
+
+	 
+	 //métodos getXxX y setXxX
 	public int getNumeroPlazas() {
 		return numeroPlazas;
 	}
@@ -15,10 +40,6 @@ public class Motocicleta extends Vehiculo {
 		this.numeroPlazas = numeroPlazas;
 	}
 	
-	@Override
-	public void setNumRuedas(int numRuedas) {
-		super.setNumRuedas(2);
-	}
 	
 	
 
