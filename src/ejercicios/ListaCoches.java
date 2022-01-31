@@ -1,4 +1,4 @@
-package hojasejercicios;
+package ejercicios;
 
 import java.util.ArrayList;
 

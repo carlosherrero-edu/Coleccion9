@@ -1,6 +1,6 @@
-package hojasejercicios;
+package ejercicios;
 
-import hojasejercicios.Utilidades.Formatos;
+import ejercicios.Utilidades.Formatos;
 
 public class Pelicula extends Multimedia {
 	

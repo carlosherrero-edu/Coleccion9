@@ -1,7 +1,7 @@
-package hojasejercicios;
+package ejercicios;
 
-import hojasejercicios.Utilidades.Formatos;
-import hojasejercicios.Utilidades.Generos;
+import ejercicios.Utilidades.Formatos;
+import ejercicios.Utilidades.Generos;
 
 public class Disco extends Multimedia {
 	

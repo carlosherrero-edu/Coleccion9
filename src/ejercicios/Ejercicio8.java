@@ -1,5 +1,5 @@
-package hojasejercicios;
-import hojasejercicios.Utilidades.*;
+package ejercicios;
+import ejercicios.Utilidades.*;
 
 public class Ejercicio8 {
 

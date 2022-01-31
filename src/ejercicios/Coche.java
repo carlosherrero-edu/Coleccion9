@@ -1,4 +1,4 @@
-package hojasejercicios;
+package ejercicios;
 
 public class Coche {
 	

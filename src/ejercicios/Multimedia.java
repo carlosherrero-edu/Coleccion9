@@ -1,6 +1,6 @@
-package hojasejercicios;
+package ejercicios;
 
-import hojasejercicios.Utilidades.Formatos;
+import ejercicios.Utilidades.Formatos;
 
 /**
  * Clase pedida en la Colección 9, Ejercicio 2

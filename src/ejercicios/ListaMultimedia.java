@@ -1,4 +1,4 @@
-package hojasejercicios;
+package ejercicios;
 
 /**
  * Clase para resolver el Ejercicio 7 de la colección 9: crear una lista multimedia

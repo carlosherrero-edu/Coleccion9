@@ -1,19 +1,19 @@
-package hojasejercicios;
+package ejercicios;
 
 import java.awt.Color;
 
-public class Camion_Ej9 extends Vehiculo_Ej9 {
+public class Camion extends Vehiculo {
 	
 	private int numEjes;
 	
 	
-	public Camion_Ej9 (int ruedas, int cilindrada, double pot, int ejes){
+	public Camion (int ruedas, int cilindrada, double pot, int ejes){
 		
 		super(ruedas, cilindrada, pot);
 		this.setNumEjes(ejes);	
 	}
 	
-	public Camion_Ej9 (int ruedas, int cilindrada, double pot, Color col, int ejes){
+	public Camion (int ruedas, int cilindrada, double pot, Color col, int ejes){
 		super(ruedas, cilindrada, pot,col);
 		this.setNumEjes(ejes);	
 		
@@ -36,15 +36,6 @@ public class Camion_Ej9 extends Vehiculo_Ej9 {
 			throw new IllegalArgumentException ("El número de ruedas de un camión debe ser mayor de 5");
 		}	
 		setNumRuedas(numRuedas);
-	}
-	
-	
-	//método que implementa el método abstracto del padre. NO se sobreescribe
-
-	public double calcularImpuesto(){
-		return this.getCilindrada()/30.0 + this.getPotencia()*20 + 
-				this.getNumRuedas()*20 + this.getNumEjes()*50;
-		
 	}
 
 }

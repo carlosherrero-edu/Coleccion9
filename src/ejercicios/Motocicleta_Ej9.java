@@ -1,6 +1,6 @@
-package hojasejercicios;
+package ejercicios;
 
-public class Motocicleta extends Vehiculo {
+public class Motocicleta_Ej9 extends Vehiculo_Ej9 {
 	
 	private int numeroPlazas;
 
@@ -19,6 +19,13 @@ public class Motocicleta extends Vehiculo {
 	public void setNumRuedas(int numRuedas) {
 		super.setNumRuedas(2);
 	}
+	
+	//método que implementa el método abstracto del padre. NO se sobreescribe
+
+		public double calcularImpuesto(){
+			return this.getCilindrada()/30.0 + this.getPotencia()*30;
+			
+		}
 	
 	
 

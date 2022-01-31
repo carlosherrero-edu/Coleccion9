@@ -1,8 +1,8 @@
-package hojasejercicios;
+package ejercicios;
 
 import java.awt.Color;
 
-public class Vehiculo {
+public abstract class Vehiculo_Ej9 {
 	
 	//propiedades
 	private int numRuedas;
@@ -12,11 +12,11 @@ public class Vehiculo {
 	
 	//constructores
 	
-	Vehiculo(){
+	Vehiculo_Ej9(){
 		
 	}
 	
-	public Vehiculo(int ruedas, int cilindrada, double pot){
+	public Vehiculo_Ej9(int ruedas, int cilindrada, double pot){
 		
 			this.setNumRuedas(ruedas);
 			this.setCilindrada(cilindrada);
@@ -24,7 +24,7 @@ public class Vehiculo {
 	
 	}
 	
-	public Vehiculo(int ruedas, int cilindrada, double pot, Color col){
+	public Vehiculo_Ej9(int ruedas, int cilindrada, double pot, Color col){
 		
 		this(ruedas, cilindrada, pot);
 		this.setColor(col);
@@ -65,6 +65,9 @@ public class Vehiculo {
 		this.color = color;
 		
 	}
+	
+	//método abstracto que desarrollará cada subclase
+	public abstract double calcularImpuesto();
 	
 	
 	
