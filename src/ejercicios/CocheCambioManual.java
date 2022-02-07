@@ -1,18 +1,35 @@
 package ejercicios;
+import ejercicios.Utilidades.Marchas;
 
+/**
+ * Clase CocheCambioManual, hereda de Coche
+ * @author Carlos H
+ * @see Coche
+ *
+ */
 public class CocheCambioManual extends Coche {
 	
+	/**
+	 * Constructor ˙nico que llama al constructor de la clase padre
+	 * @param matricula matrÌcula, cadena
+	 * @param modelo modelo del vehÌculo, cadena
+	 */
 	public CocheCambioManual(String matricula, String modelo){
 		super (matricula, modelo);
 	}
 	
-	//s√≥lo vamos a tener un m√©todo para cambiar de marcha
+	// vamos a tener un m√©todo para cambiar de marcha
 	
+	/**
+	 * MÈtodo para cambiar la marcha del vehÌculo
+	 * @param nuevamarcha constante de la enumeraciÛn Marchas, con la nueva marcha a la que queremos cambiar
+	 * Genera excepciÛn si queremos cambiar a REPOSO con una velocidad no nula
+	 */
 	public void cambiaMarcha (Marchas nuevamarcha){
 		
 		if ( nuevamarcha == Marchas.REPOSO && this.getVelocidad()>0)
 			throw new IllegalArgumentException ("No puedes cambiar a reposo "
-					+ "mientras el veh√≠culo no se detenga");
+					+ "mientras el vehiculo no se detenga");
 			
 		super.setMarcha(nuevamarcha);
 		

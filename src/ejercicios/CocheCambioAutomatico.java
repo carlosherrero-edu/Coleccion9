@@ -1,12 +1,29 @@
 package ejercicios;
+import ejercicios.Utilidades.Marchas;
 
+/**
+ * Clase CocheCambioAutomatico, hereda de Coche
+ * @author Carlos H
+ * @see Coche
+ *
+ */
 public class CocheCambioAutomatico extends Coche {
 	
+	/**
+	 * Constructor único, que invoca al constructor del padre
+	 * @param matricula matrícula del vehículo
+	 * @param modelo modelo/marca correspondiente
+	 */
 	public CocheCambioAutomatico(String matricula, String modelo){
 		super (matricula, modelo);
 	}
 	
-	void cambiarMarchaAuto (){
+	
+	/**
+	 * Método para cambiar automáticamente la marcha del vehículo al acelerarlo o frenarlo
+	 * Lo hacemos privado ya que sólo lo llamaremos desde los métodos acelerar y frenar
+	 */
+	private void cambiarMarchaAuto (){
 		
 		double velo = getVelocidad();
 		

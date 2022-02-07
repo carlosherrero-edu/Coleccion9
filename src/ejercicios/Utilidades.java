@@ -11,5 +11,7 @@ public class Utilidades {
 	
 	public static enum Generos {POP, ROCK, JAZZ, FOLK, DISCO, BALADA};
 	
+	public static enum Marchas { PRIMERA, SEGUNDA, TERCERA, CUARTA, QUINTA, SEXTA, REPOSO};
+	
 
 }

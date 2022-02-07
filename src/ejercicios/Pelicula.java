@@ -10,11 +10,13 @@ public class Pelicula extends Multimedia {
 	
 	//constructor
 	public  Pelicula (String tit, String aut, int dur, Formatos format,
-			String actor, String actriz){
+			String actor, String actriz) throws IllegalArgumentException{
 		super(tit, aut, dur, format); 
-		if (actor.length()<1 && actriz.length()<0){
+		//validación impidiendo que actor y actriz estén ambos en blanco
+		if (actor.length()<1 && actriz.length()<1){
 			 throw new IllegalArgumentException("hay que indicar un actor o una actriz");
 		 }
+		
 		 setActorPrincipal(actor);
 		 setActrizPrincipal(actriz);
 		 		
@@ -24,20 +26,25 @@ public class Pelicula extends Multimedia {
 	public String getActorPrincipal() {
 		return actorPrincipal;
 	}
+	
 	public void setActorPrincipal(String actorPrincipal) {
 		this.actorPrincipal = actorPrincipal;
 	}
+	
 	public String getActrizPrincipal() {
 		return actrizPrincipal;
 	}
+	
 	public void setActrizPrincipal(String actrizPrincipal) {
 		this.actrizPrincipal = actrizPrincipal;
 	}
 	
 	@Override
 	public String toString(){
-		return super.toString() + "**"+ getActorPrincipal()+ "**" 
-	+getActrizPrincipal();
+		return super.toString() + 
+		((getActorPrincipal().length()>0) ?"\n Actor Principal: "+getActorPrincipal() : "")+
+		((getActrizPrincipal().length()>0) ?"\n Actriz Principal: "+getActrizPrincipal() : "");
+				
 	}
 	
 

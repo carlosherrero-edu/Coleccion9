@@ -3,6 +3,10 @@ package ejercicios;
 import ejercicios.Utilidades.Formatos;
 import ejercicios.Utilidades.Generos;
 
+/**
+ * @author Alumno
+ *
+ */
 public class Disco extends Multimedia {
 	
 	//propiedades nuevas de la subclase
@@ -10,8 +14,16 @@ public class Disco extends Multimedia {
 	private int pistas;
 	
 	//constructor
+	/**
+	 * @param tit
+	 * @param aut
+	 * @param dur
+	 * @param format
+	 * @param gen
+	 * @param pistas
+	 */
 	public  Disco (String tit, String aut, int dur, Formatos format,
-			Generos gen, int pistas) {
+			Generos gen, int pistas) throws IllegalArgumentException {
 		super(tit, aut, dur, format); 
 		setGenero( gen)	;
 		setPistas (pistas);
@@ -31,13 +43,16 @@ public class Disco extends Multimedia {
 	}
 
 	public void setPistas(int pistas) {
+		if (pistas<1) {
+			throw new IllegalArgumentException("Al menos debe haber 1 pista");
+		}
 		this.pistas = pistas;
 	}
 	
 	@Override
 	public String toString(){
-		return super.toString() + "**"+ getGenero()+ "**" 
-	+getPistas();
+		return super.toString() + 
+		"\n Género musical: "+getGenero();
 	}
 
 	
