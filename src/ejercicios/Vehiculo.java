@@ -3,105 +3,87 @@ package ejercicios;
 import java.awt.Color;
 
 public class Vehiculo {
-	
-	//propiedades
-	private int numRuedas;
-	private int cilindrada;
-	private double potencia;
-	private Color color;
-	
-	//constructores de la clase
-	
-	/**
-	 * Constructor por defecto de la clase. No inicializa ninguna propiedad
-	 */
-	Vehiculo(){
-		
-	}
-	
-	/**
-	 * Constructor  que inicializa todas las propiedades, excepto el color
-	 * @param ruedas número de ruedas, mayor de 0
-	 * @param cilindrada cilindrada en cc., mayor de 0
-	 * @param pot potencia en CV., mayor de 0
-	 * @throws IllegalArgumentException excepción si se trata de asignar a alguna propiedad un valor no válido
-	 */
-	public Vehiculo(int ruedas, int cilindrada, double pot) throws IllegalArgumentException{
-		
-			this.setNumRuedas(ruedas);
-			this.setCilindrada(cilindrada);
-			this.setPotencia(pot);
-	
-	}
-	
-	/**
-	 * Constructor que inicializa todas las propiedades, incluyendo el color
-	 * @param ruedas número de ruedas, mayor de 0
-	 * @param cilindrada cilindrada en cc., mayor de 0
-	 * @param pot potencia en CV., mayor de 0
-	 * @param col color del vehículo, como constante de la clase java.awt.Color
-	 * @throws IllegalArgumentException excepción si se trata de asignar a alguna propiedad un valor no válido
-	 */
-	public Vehiculo(int ruedas, int cilindrada, double pot, Color col) throws IllegalArgumentException{
-		
-		this(ruedas, cilindrada, pot);
-		this.setColor(col);
-		
-	
-	}
-	
-	//métodos get y set, con las validaciones pedidas en el enunciado
-	
-	//getters y setters para la propiedad numRuedas
-	
+
+	protected int numRuedas;
+	protected int cilindrada;
+	protected int potencia;
+	protected Color color;
+
+	public Vehiculo(int numRuedas, int cilindrada, int potencia) {
+	    
+	        // aqui estmos llamando al los setters que ya tienen las validaciones;  si no lo
+	        // hiciesemos de esta forma, tendrimos que volver a escribir la validacion
+	        setNumRuedas(numRuedas);
+	        setCilindrada(cilindrada);
+	        setPotencia(potencia);
+
+	    }
+
+	public Vehiculo(int numRuedas, int cilindrada, int potencia, Color color) {
+	        this(numRuedas, cilindrada, potencia);
+	        setColor(color);
+
+	        /*
+	         * setNumRuedas(numRuedas); setCilindrada(cilindrada); setPotencia(potencia);
+	         */
+	        
+	    }
+
 	public int getNumRuedas() {
 		return numRuedas;
 	}
-	
+
 	public void setNumRuedas(int numRuedas) {
-		if (numRuedas<=0){
-			throw new IllegalArgumentException ("El nÃºmero de ruedas debe ser mayor de cero");
-		}	
+		// validacion
+		if (numRuedas < 1) {
+			throw new IllegalArgumentException("El numero de ruedas debe ser mayor de 0");
+		}
+			
 		this.numRuedas = numRuedas;
+		
+		
+		
+		// este seria otro metodo, si el numRuedas es mayor de 0, tendremos un if y el
+		// else
+		/*
+		 * if (numRuedas > 0) { this.numRuedas = numRuedas; } else { throw new
+		 * IllegalArgumentException("El numero de ruedas"); }
+		 */
 	}
-	
-	//getters y setters para la propiedad cilindrada
+
 	public int getCilindrada() {
 		return cilindrada;
 	}
-	
+
 	public void setCilindrada(int cilindrada) {
-		if (cilindrada<=0){
-			throw new IllegalArgumentException ("La cilindrada debe ser mayor de cero");
-		}	
+		if (cilindrada < 1) {
+			throw new IllegalArgumentException("La cilindrada debe ser mayor de 0");
+		}
 		this.cilindrada = cilindrada;
 	}
-	
-	//getters y setters para la propiedad potencia
-	public double getPotencia() {
+
+	public int getPotencia() {
 		return potencia;
 	}
-	
-	public void setPotencia(double potencia) {
-		if (potencia<=0){
-			throw new IllegalArgumentException ("La potencia debe ser mayor de cero");
+
+	public void setPotencia(int potencia) {
+		if (potencia < 1) {
+			throw new IllegalArgumentException("La potencia debe ser mayor de 0");
 		}
 		this.potencia = potencia;
 	}
-	
-	//getters y setters para la propiedad color
-	
-	
+
 	public Color getColor() {
 		return color;
 	}
-	
+
 	public void setColor(Color color) {
 		this.color = color;
-		
 	}
-	
-	
-	
+
+	// @Overrite
+	public String toString() {
+		return getNumRuedas() + "-" + getCilindrada() + "-" + getPotencia() + "-" + getColor();
+	}
 
 }

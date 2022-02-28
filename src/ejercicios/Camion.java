@@ -14,13 +14,13 @@ public class Camion extends Vehiculo {
 	
 	
 	//constructores que sobreescriben los constructores de la clase padre
-	public Camion (int ruedas, int cilindrada, double pot, int ejes) throws IllegalArgumentException{
+	public Camion (int ruedas, int cilindrada, int pot, int ejes) throws IllegalArgumentException{
 		
 		super(ruedas, cilindrada, pot);
 		setNumEjes(ejes);	
 	}
 	
-	public Camion (int ruedas, int cilindrada, double pot, Color col, int ejes) throws IllegalArgumentException{
+	public Camion (int ruedas, int cilindrada, int pot, Color col, int ejes) throws IllegalArgumentException{
 		super(ruedas, cilindrada, pot,col);
 		setNumEjes(ejes);	
 		
@@ -32,7 +32,7 @@ public class Camion extends Vehiculo {
 	}
 
 	public void setNumEjes(int numEjes) {
-		if (numEjes<=1){
+		if (numEjes<2){
 			throw new IllegalArgumentException ("El número de ejes debe ser al menos de 2");
 		}
 		this.numEjes = numEjes;

@@ -2,94 +2,98 @@ package ejercicios;
 
 import ejercicios.Utilidades.Formatos;
 
-/**
- * Clase pedida en la ColecciÃ³n 9, Ejercicio 2
- * @author Carlos Herrero
- * @version 1.0
- *
- */
 public class Multimedia {
 	
-	//propiedades de la clase
+	
+
+	// EJERCICIO 02
+	/**
+	 * Escribir una clase Multimedia para gestionar información de objetos
+	 * multimedia con sonido y/o vídeo (clips de audio, vídeo, películas,…). Está
+	 * clase vendrá dotada de las siguientes propiedades: TITULO AUTOR MINUTOS
+	 * FORMATO
+	 */
+	// declaracion de atributos de la clase
 	private String titulo;
 	private String autor;
-	private int duracion;
-	private Formatos formato;
-	
-	//constructor que inicializa y da valores a todas las propiedades
-	public Multimedia (String tit, String aut, int dur, Formatos format){
-		
-		setTitulo(tit);
-		setAutor(aut);
-		setDuracion(dur);
-		setFormato(format);
+	private int minutos;
+	private Formatos miFormato;
+
+	public Multimedia(String titulo, String autor, int minutos, Formatos tuFormato) {
+		this.titulo = titulo;
+		this.autor = autor;
+		this.minutos = minutos;
+		this.miFormato = tuFormato;
 	}
-	
-	
-	// mÃ©todos get y set
+
+	// getters
+
 	public String getTitulo() {
 		return titulo;
 	}
-	
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-	
+
 	public String getAutor() {
 		return autor;
 	}
-	
-	public void setAutor(String autor) {
-		this.autor = autor;
+
+	public int getMinutos() {
+		return minutos;
 	}
-	
-	
-	public int getDuracion() {
-		return duracion;
-	}
-	
-	public void setDuracion(int duracion) {
-		this.duracion = duracion;
-	}
-	
+
 	public Formatos getFormato() {
-		return formato;
+		return miFormato;
 	}
-	
-	public void setFormato(Formatos formato) {
-		this.formato = formato;
+
+	// setter
+	public void setTitulo(String tuTitulo) {
+		this.titulo = tuTitulo;
 	}
-	
-	
-	//otros mÃ©todos heredados de Object y sobreescritos
+
+	public void setAutor(String tuAutor) {
+		this.autor = tuAutor;
+	}
+
+	public void setMinutos(int tusMinutos) {
+		this.minutos = tusMinutos;
+	}
+
+	public void setFormato(Formatos tuFormato) {
+		this.miFormato = tuFormato;
+	}
+
+	// metodos
 	@Override
-	public String toString(){
-		
-		return "\n Título: "+getTitulo()+
-				"\n Autor: " +getAutor()+
-				"\n Duración: " + getDuracion()+" minutos"+
-				"\n Formato: " +getFormato();
+	public String toString() {
+
+		return String.format("Título: %50s \n Autor: %50s\n Duración en minutos: %3d \t Formato: %s",
+				getTitulo(),  getAutor(),  getMinutos(), getFormato().toString() );
+
+
 	}
-	
+
 	@Override
-	public boolean equals (Object m2){
+	public boolean equals(Object multi) {
 		
 		boolean sonIguales=false;
 		
-		if (m2 instanceof Multimedia) {
-			//hago la conversión descendente del objeto m2 a Multimedia
-			Multimedia multi2=(Multimedia)m2;
-			//ahora compruebo la igualdad de los atributos pedida
-			if (this.getTitulo().equalsIgnoreCase(multi2.getTitulo())) {
-				if (this.getAutor().equalsIgnoreCase(multi2.getAutor())) {
-					//sólo si se cumplen estas condiciones, se consideran iguales
+		if (multi instanceof Multimedia) {
+			
+			
+			
+			Multimedia otroMulti=(Multimedia)multi;
+			
+			if (getTitulo().equalsIgnoreCase(otroMulti.getTitulo())){
+				if (getAutor().equalsIgnoreCase(otroMulti.getAutor())){
+					//los dos objetos de la clase Multimedia se consideran iguales
 					sonIguales=true;
 				}
+				
 			}
+			
 		}
+		
 		
 		return sonIguales;
 	}
-	
 
 }

@@ -2,54 +2,41 @@ package ejercicios;
 
 import java.awt.Color;
 
-/**
- * Clase Motocicleta que hereda de la clase Vehiculo
- * @author Carlos H.
- * @see Vehiculo
- *
- */
 public class Motocicleta extends Vehiculo {
 	
+	static final int NUM_RUEDAS=2; 
 	
-
-	//constante con el número de ruedas
-	static final int RUEDAS_MOTO = 2;
-	
-	//propiedad de la clase
-	
-	private int numeroPlazas;
+	int numeroPlazas;
 	
 	//constructores
+	public Motocicleta( int cilindrada, int potencia, int numeroPlazas) {
+		super(NUM_RUEDAS, cilindrada, potencia);
 	
-	public Motocicleta(int ruedas, int cilindrada, double pot, int plazas) throws IllegalArgumentException {
-		super(RUEDAS_MOTO, cilindrada, pot);
-		setNumeroPlazas(plazas);
-	
-	}
-	
-	public Motocicleta(int ruedas, int cilindrada, double pot, Color col, int plazas) throws IllegalArgumentException {
-		super(RUEDAS_MOTO, cilindrada, pot, col);
-		setNumeroPlazas(plazas);
-		
+		setNumeroPlazas(numeroPlazas);
+
 	}
 
-	
-	//métodos get y set para la propiedad numPlazas
+	public Motocicleta( int cilindrada, int potencia, Color color) {
+		super(NUM_RUEDAS, cilindrada, potencia, color);
+		setNumeroPlazas(numeroPlazas);
+
+	}
+
 	public int getNumeroPlazas() {
 		return numeroPlazas;
 	}
 
-	
-
 	public void setNumeroPlazas(int numeroPlazas) {
-		if (numeroPlazas<=0){
-			throw new IllegalArgumentException ("El nÃºmero de plazas debe ser mayor de cero");
+		if (numeroPlazas >=1 ) {
+			this.numeroPlazas = numeroPlazas;
+			
+		} else {
+			throw new IllegalArgumentException("el numero de plazas debe ser al menos de 1");
 		}
-		this.numeroPlazas = numeroPlazas;
+		
+		
 	}
 	
-	
-	
-	
+
 
 }

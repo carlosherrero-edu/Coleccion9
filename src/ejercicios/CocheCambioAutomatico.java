@@ -27,33 +27,37 @@ public class CocheCambioAutomatico extends Coche {
 		
 		double velo = getVelocidad();
 		
-		if (velo>0 && velo <15)
-			super.setMarcha(Marchas.PRIMERA);
-		else if (velo<30)
-			super.setMarcha(Marchas.SEGUNDA);
-		else if (velo<45)
-			super.setMarcha(Marchas.TERCERA);
-		else if (velo<70)
-			super.setMarcha(Marchas.CUARTA);
-		else if (velo<120)
-			super.setMarcha(Marchas.QUINTA);
-		else 
-			super.setMarcha(Marchas.SEXTA);
-	}
+		//sólo cambiamos de marcha si la velocidad es positiva
+		if (velo >0) {
+			if (velo <15)
+				super.setMarcha(Marchas.PRIMERA);
+			else if (velo<30)
+				super.setMarcha(Marchas.SEGUNDA);
+			else if (velo<45)
+				super.setMarcha(Marchas.TERCERA);
+			else if (velo<70)
+				super.setMarcha(Marchas.CUARTA);
+			else if (velo<120)
+				super.setMarcha(Marchas.QUINTA);
+			else 
+				super.setMarcha(Marchas.SEXTA);
+		}
+		
+	}//fin del método
 	
 	//sobreescribimos ahora los mÃ©todos acelerar y frenar
 	
 	@Override
 	public void acelerar(double incremento){
 		super.acelerar(incremento);
-		//con el nuevo valor de la velocidad, cambiamos de marcha
+		//con el nuevo valor de la velocidad, cambiamos de marcha de forma automática
 		cambiarMarchaAuto();		
 	}
 
 	@Override
 	public void frenar (double decremento){
 		super.frenar(decremento);
-		//con el nuevo valor de la velocidad, cambiamos de marcha
+		//con el nuevo valor de la velocidad, cambiamos de marcha de forma automática
 		cambiarMarchaAuto();		
 	}
 }

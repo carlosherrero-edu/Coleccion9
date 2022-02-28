@@ -9,7 +9,6 @@ import ejercicios.Utilidades.Marchas;
 public class Coche {
 	
 	
-	
 	//propiedades de la clase
 	private String matricula;
 	private String modelo;
@@ -63,7 +62,7 @@ public class Coche {
 	 */
 	public void acelerar (double incremento){
 		if (incremento<=0)
-			throw new IllegalArgumentException("El incremento debe ser positivo");
+			throw new IllegalArgumentException("El incremento de velocidad debe ser positivo");
 		
 		setVelocidad (this.velocidad + incremento);
 	}

@@ -12,7 +12,7 @@ public class ProbarVehiculo {
 			//estos deben generar excepciones
 			//vehi1= new Vehiculo(0,1000, 300);
 			//vehi2= new Vehiculo(4,0, 300);
-			vehi3= new Vehiculo(4,1000, 0);
+			//vehi3= new Vehiculo(4,1000, 0);
 			
 			//este no
 			vehi4= new Vehiculo(4,1000, 300);

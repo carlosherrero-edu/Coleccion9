@@ -1,7 +1,12 @@
-package ejercicios;
+package pruebas;
 import ejercicios.Utilidades.*;
 
-public class Ejercicio8 {
+import ejercicios.Disco;
+import ejercicios.ListaMultimedia;
+import ejercicios.Multimedia;
+import ejercicios.Pelicula;
+
+public class PruebaEjercicio8 {
 
 	public static void main(String[] args) {
 	
@@ -38,24 +43,29 @@ public class Ejercicio8 {
 		Multimedia item;
 		
 		for (int i=0; i<miLista.size(); i++){
+			
 			item = miLista.recuperar(i);
-			duracion += item.getDuracion();
+			//en duración guardamos la duración total en minutos de todos los elementos de la lista
+			duracion += item.getMinutos();
+			
+			//para las películas, guardamos en "sinActriz" cuántas películas no tienen actriz principal
 			if (item instanceof Pelicula && 
 					((Pelicula)item).getActrizPrincipal().length()==0){
 				sinActriz ++;
 			}
+			//para los Discos, guardamos en la variable discosRock cuántos son del género Rock
 			if (item instanceof Disco && 
 					((Disco)item).getGenero()==Generos.ROCK){
 				discosRock ++;
 			}
-			System.out.println(item instanceof Pelicula ? "PelÃ­cula": "Disco");
+			System.out.println(item instanceof Pelicula ? "Pelicula": "Disco");
 			System.out.println("Autor/director  :"+ item.getAutor());
-			System.out.println("TÃ­tulo  :"+ item.getTitulo());
+			System.out.println("Titulo  :"+ item.getTitulo());
 			System.out.println(" Formato : "+ item.getFormato());
 			System.out.println("---------------------------------------------------");
 		} //fin del recorrido de la lista
-		System.out.println("DuraciÃ³n total en minutos : "+ duracion);
-		System.out.println( "PelÃ­culas sin actriz  :" + sinActriz);
+		System.out.println("Duracion total en minutos : "+ duracion);
+		System.out.println( "Peliculas sin actriz  :" + sinActriz);
 		System.out.println( "Discos de rock :" + discosRock);
 			
 			
